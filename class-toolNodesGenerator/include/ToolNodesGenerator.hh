@@ -22,6 +22,10 @@ class ToolNodesGenerator
 		void SetBoundaryZ(double min, double max);
 		void Initialize();
 
+    public:
+		void GetAnchors(vector<double> &As_x, vector<double> &As_y, vector<double> &As_z);
+		void GetNodes(vector<double> &Ns_x, vector<double> &Ns_y, vector<double> &Ns_z);
+
     private:
 		bool GenerateRandom(string AxisName);
 

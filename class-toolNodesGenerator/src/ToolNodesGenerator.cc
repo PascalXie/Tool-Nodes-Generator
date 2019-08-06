@@ -92,8 +92,8 @@ void ToolNodesGenerator::Initialize()
 
 	// observations
 	// write
-	ofstream write1("observations_groundTruth.txt");
-	ofstream write2("observations.txt");
+	ofstream write1("observations_groundTruth"+name_+".txt");
+	ofstream write2("observations"+name_+".txt");
 	write1<<"NumberAnchors "<<NumberAnchors_<<" NumberNodes "<<NumberNodes_<<endl;
 	write2<<"NumberAnchors "<<NumberAnchors_<<" NumberNodes "<<NumberNodes_<<endl;
 	for(int i=0;i<NumberAnchors_;i++)
@@ -137,6 +137,8 @@ void ToolNodesGenerator::Initialize()
 
 	
 
+	/*
+	// debug
 	cout<<"-------------------------------------------------------"<<endl;
 	cout<<"----"<<endl;
 	cout<<"ToolNodesGenerator::Initialize "<<endl;
@@ -157,6 +159,7 @@ void ToolNodesGenerator::Initialize()
 	}
 	cout<<"----"<<endl;
 	cout<<"-------------------------------------------------------"<<endl;
+	*/
 
 }
 
@@ -230,4 +233,21 @@ bool ToolNodesGenerator::GenerateRandom(string AxisName)
 	}
 
 	return true;
+}
+
+//--------------------------------
+// Private
+//--------------------------------
+void ToolNodesGenerator::GetAnchors(vector<double> &As_x, vector<double> &As_y, vector<double> &As_z)
+{
+	As_x = As_x_;
+	As_y = As_y_;
+	As_z = As_z_;
+}
+
+void ToolNodesGenerator::GetNodes(vector<double> &Ns_x, vector<double> &Ns_y, vector<double> &Ns_z)
+{
+	Ns_x = Ns_x_;
+	Ns_y = Ns_y_;
+	Ns_z = Ns_z_;
 }

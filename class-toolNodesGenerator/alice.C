@@ -16,5 +16,13 @@ int main()
 	ng->Initialize();
 
 
+	vector<double> Nxs, Nys, Nzs;
+	ng->GetAnchors(Nxs, Nys, Nzs);
+
+	for(int i=0;i<Nxs.size();i++)
+	{
+		cout<<"ID "<<i<<", x "<<Nxs[i]<<", y "<<Nys[i]<<", z "<<Nzs[i]<<endl;
+	}
+
 	return 1;
 }
